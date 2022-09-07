@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+   
+  </head>
+  <body>
     <div class="my_quizapp">
         <div class="image">
             <img src="./images/quiz.svg" alt="home image">
@@ -20,5 +28,74 @@
             <button>Start Quiz</button>
         </div>
     </div>
-</body>
+
+    <div class="rules-box">
+      <div class="rules-title">Some Rules of this Quiz</div>
+      <div class="rules-list">
+        <ol>
+          <li>
+            You will have <span style="color: #0984e3">15 seconds</span> per
+            each question
+          </li>
+          <li>Once you select your answer, it can't be undone</li>
+          <li>You can't select any option once time goes off</li>
+          <li>You can't exit from the quiz while you are playing</li>
+          <li>You'll get point on the basis of your correct answer</li>
+        </ol>
+      </div>
+      <div class="buttons">
+        <button class="exitBtn">Exit Quiz</button>
+        <button class="continueBtn">Continue</button>
+      </div>
+    </div>
+
+    <!-- <div class="questions">
+      <header class="questionsHeader">
+        <div class="title">Start Exam</div>
+
+        <div class="timeCount">
+          <div class="timeLeft">Time Left</div>
+          <div class="seconds">15</div>
+        </div>
+
+        <div class="time_lines"></div>
+      </header>
+
+      <div class="section">
+        <div class="quiz-text">
+          <span>1. What Does HTML Stand For?</span>
+        </div>
+
+        <div class="MyOptions">
+            <div class="options">
+                <span>Hyper Text Multiple Language</span>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="options">
+                <span>Hyper Text Markup Language</span>
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="options">
+                <span>How to Meet Lady</span>
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="options">
+                <span>Hyper Text XML</span>
+                <i class="fa-solid fa-check"></i>
+            </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="total_que">
+          <p>1 of 5 Questions</p>
+        </div>
+        <button class="nextBtn">Next Que</button>
+      </footer>
+    </div> -->
+    <script src="/js/script.js"></script>
+   
+
+   
+  </body>
 </html>
