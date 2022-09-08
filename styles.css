@@ -123,6 +123,12 @@ body {
 .continueBtn:hover {
     background-color: #9C8F43;
 }
+.questions.questionInfo {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
 .questions {
     width: 320px;
    height: 580px;
@@ -133,7 +139,8 @@ body {
    box-shadow: rgb(0 0 0 / 10%) 0px 10px 50px;
    transform: translate(-50%, -50%);
    border-radius: 48px;
-   
+   opacity: 0;
+   pointer-events: none;
    
 }
 
