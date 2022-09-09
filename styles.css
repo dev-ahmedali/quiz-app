@@ -193,19 +193,32 @@ body {
     padding: 25px 30px 20px 30px;
 }
 .quiz-text {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
 }
 .MyOptions {
     padding: 20px 0px;
     display: block;   
 }
+.options.correct {
+    color: #05c46b;
+    background-color: #bbf3e2;
+    border: 1px solid #68f2c8;
+}
+.options.incorrect {
+    color: #f03531;
+    background-color: #e9c4cc;
+    border: 1px solid #e16771;
+}
+.options.disabled {
+    pointer-events: none;
+}
 .options {
     background: aliceblue;
     border: 1px solid #84c5fe;
     border-radius: 5px;
     padding: 12px 20px;
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -243,6 +256,7 @@ body {
     cursor: pointer;
     color: #f1f1f1;
     transition: all 0.3s ease;
+    display: none;
     /* margin-top: 152px; */
 
 }
@@ -250,3 +264,11 @@ body {
     background-color: #9C8F43;
     
 } 
+
+.questions header .time_lines {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: #575fcf;
+}
