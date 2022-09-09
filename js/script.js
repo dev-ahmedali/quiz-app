@@ -10,6 +10,9 @@ const NextButton = document.querySelector('.nextBtn');
 const totolQuestion = document.querySelector('.total_que');
 const timeCounter = document.querySelector('.timeCount .seconds');
 const timeLine = document.querySelector('.questionsHeader .time_lines');
+const resultBox = document.querySelector(".result_box")
+const restartQuiz = document.querySelector(".buttons_result .restart")
+const quitQuiz = document.querySelector(".buttons_result .quit")
 
 quizButton.onclick = () => {
   rulesBox.classList.add('activeInfo');
@@ -26,12 +29,21 @@ continueButton.onclick = () => {
   startTimer(15);
   startTimerLine(0)
 };
+
+quitQuiz.onclick = () => {
+  window.location.reload()
+}
+
+restartQuiz.onclick = () => {
+  
+}
 // defined variable
 let questionCount = 0;
 let counter;
 let timeValue = 15;
 let counterLine;
 let widthValue = 0
+let userScore = 0
 
 NextButton.onclick = () => {
   if (questionCount < questions.length - 1) {
@@ -44,7 +56,7 @@ NextButton.onclick = () => {
     startTimerLine(widthValue)
     NextButton.style.display = 'none'
   } else {
-    alert('You have complete your task');
+    showResultBox()
   }
 };
 
@@ -90,12 +102,12 @@ function optionSelected(answer) {
   let correctAns = questions[questionCount].answer;
   let allOptions = optionList.children.length;
   if (userAnswer === correctAns) {
+    userScore += 1;
+    console.log(userScore)
     answer.classList.add('correct');
-    console.log('answer is correct');
     answer.insertAdjacentHTML('beforeend', checkIcon);
   } else {
     answer.classList.add('incorrect');
-    console.log('Answer is wrong');
     answer.insertAdjacentHTML('beforeend', crossIcon);
 
     for (let i = 0; i < allOptions; i++) {
@@ -111,6 +123,26 @@ function optionSelected(answer) {
   }
   NextButton.style.display = 'block'
 }
+
+
+function showResultBox() {
+  rulesBox.classList.remove('activeInfo');
+  Questions.classList.remove('questionInfo');
+  resultBox.classList.add("activeResult")
+  const scoreText = document.querySelector(".score_text")
+  if (userScore > 3) {
+    let scoreTag = '<span>Congratulations you got <p>' + userScore + '</p>out of <p> '+ questions.length + ' </p></span>'
+    scoreText.innerHTML = scoreTag
+  }
+  else if (userScore > 1) {
+    let scoreTag = '<span>Carry on you got <p>' + userScore + '</p>out of <p> '+ questions.length + ' </p></span>'
+    scoreText.innerHTML = scoreTag
+  } else {
+    let scoreTag = '<span>You have failed you got <p>' + userScore + '</p>out of <p> '+ questions.length + ' </p></span>'
+    scoreText.innerHTML = scoreTag
+  }
+}
+
 
 // Start timer
 function startTimer(time) {
